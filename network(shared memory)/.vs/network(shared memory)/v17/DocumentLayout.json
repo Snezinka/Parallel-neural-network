@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "A:\\University\\Diploma\\Pre-graduate practice\\Parallel-neural-network\\network(shared memory)\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{81748D16-DB3F-4CC3-B9F9-61EC92F297D3}|network(shared memory).vcxproj|A:\\University\\Diploma\\Pre-graduate practice\\Parallel-neural-network\\network(shared memory)\\network(shared memory).cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{81748D16-DB3F-4CC3-B9F9-61EC92F297D3}|network(shared memory).vcxproj|solutionrelative:network(shared memory).cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "network(shared memory).cpp",
+              "DocumentMoniker": "A:\\University\\Diploma\\Pre-graduate practice\\Parallel-neural-network\\network(shared memory)\\network(shared memory).cpp",
+              "RelativeDocumentMoniker": "network(shared memory).cpp",
+              "ToolTip": "A:\\University\\Diploma\\Pre-graduate practice\\Parallel-neural-network\\network(shared memory)\\network(shared memory).cpp",
+              "RelativeToolTip": "network(shared memory).cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-05T07:43:08.798Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
