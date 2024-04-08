@@ -7,7 +7,6 @@ using namespace std;
 
 Data* loading_data(string path, Neural_Network& network, double size_test = 0.2)
 {
-	
 	cout << "Loading data..." << endl;
 	int examples;
 	int examples_train;
