@@ -2,9 +2,46 @@
 #include <iostream>
 #include <fstream>
 #include <random>
+#include <vector>
 using namespace std;
 
-// Для создания весов используется метод нормализованной инициализации
+
+struct Data
+{
+    int y;
+    vector<double> x;
+};
+
+
+vector <Data> load_data(string path, int count_x)
+{
+    int examples;
+
+    ifstream file;
+    file.open(path);
+    file >> examples;
+
+    vector <Data> data(examples);
+
+    for (int i = 0; i < examples; ++i)
+    {
+        data[i].x.resize(count_x);
+    }
+
+    for (int i = 0; i < examples; ++i)
+    {
+        file >> data[i].y;
+        for (int j = 0; j < count_x; ++j)
+        {
+            file >> data[i].x[j];
+        }
+    }
+
+    return data;
+}
+
+
+// Для создания весов используется метод нормированной инициализации
 double create_number(int n, int m)
 {
     double low = -sqrt(6) / sqrt(n + m);
@@ -28,68 +65,33 @@ double derivative_sigmoid(double z)
     return delta;
 }
 
+
+
+
 int main()
 {
 
-    cout << "Loading data\n" << endl;
-    string path = "A:/University/Diploma/Pre-graduate practice/Parallel-neural-network/Data/lib_MNIST_edit.txt";
-    ifstream fin;
-    fin.open(path);
-    string tmp;
-    fin >> tmp;
-    int examples_data;
+    int count_x = 784;
+    vector <Data> train_data;
+    vector <Data> test_data;
+    string path_train = "A:/University/Diploma/Pre-graduate practice/Data/MNIST_train.txt";
+    string path_test = "A:/University/Diploma/Pre-graduate practice/Data/MNIST_test.txt";
 
-    fin >> examples_data;
-    //examples_data -= 50048;
-    cout << "Examples: " << examples_data << endl;
-    double** x_data = new double* [examples_data];
-    double* y_data = new double[examples_data];
-    for (int i = 0; i < examples_data; ++i)
-    {
-        x_data[i] = new double[784];
-    }
 
-    for (int i = 0; i < examples_data; ++i)
-    {
-        fin >> y_data[i];
-        for (int j = 0; j < 784; ++j)
-        {
-            fin >> x_data[i][j];
-        }
-    }
-    fin.close();
-    cout << "Data MNIST loaded \n";
+    cout << "Loading data..." << endl;
+    train_data = load_data(path_train, count_x);
+    test_data = load_data(path_test, count_x);
+    cout << "Data loaded." << endl;
 
-    path = "A:/University/Diploma/Pre-graduate practice/Parallel-neural-network/Data/lib_10k.txt";
-    int examples_test;
-    fin.open(path);
-    fin >> tmp;
-    fin >> examples_test;
-    // examples_test -= 9000;
-    cout << "Examples: " << examples_test << endl;
-    double** x_test = new double* [examples_test];
-    double* y_test = new double[examples_test];
-    for (int i = 0; i < examples_test; ++i)
-    {
-        x_test[i] = new double[784];
-    }
-
-    for (int i = 0; i < examples_test; ++i)
-    {
-        fin >> y_test[i];
-        for (int j = 0; j < 784; ++j)
-        {
-            fin >> x_test[i][j];
-        }
-    }
-    fin.close();
-    cout << "Test MNIST loaded \n" << endl;
+    const int L = 4;
+    int size_network[L]{ 784, 256, 30, 10 };
+    double** weights[L];
+    double* biases[L];
+    double* delta[L];
+    double* neurons_value[L];
+    double* activations[L];
 
     cout << "Initialisation Network" << endl;
-    //Инициализация нейросети
-    const int L = 3;
-    int size_network[L]{ 784, 256, 10 };
-
     cout << "Number lauers: " << L << endl;
     cout << "Size network: ";
     for (int i = 0; i < L; i++)
@@ -97,14 +99,14 @@ int main()
         cout << size_network[i] << " ";
     }
     cout << endl;
-    double** weights[L];
-    double* biases[L];
-    double* delta[L];
+
     for (int i = 0; i < L; i++)
     {
         weights[i] = new double* [size_network[i]];
         biases[i] = new double[size_network[i]];
         delta[i] = new double[size_network[i]];
+        neurons_value[i] = new double[size_network[i]];
+        activations[i] = new double[size_network[i]];
     }
     for (int i = 1; i < L; i++)
     {
@@ -126,24 +128,13 @@ int main()
         }
     }
 
-    double* neurons_value[L];
-    double* activations[L];
-
-    for (int i = 0; i < L; i++)
-    {
-        neurons_value[i] = new double[size_network[i]];
-        activations[i] = new double[size_network[i]];
-    }
-
-
-
-
-    int size_mini_batch = 100;
-    int count_batch = examples_data / size_mini_batch;
-    double epoch = 5;
+    int size_mini_batch = 10;
+    int count_batch = train_data.size() / size_mini_batch;
+    double epoch = 10;
+    double right_answers_data, right_answers_test;
+    double begin, end;
     chrono::duration<double> time;
-    double right_answers_data;
-    double right_answers_test;
+
     for (int p = 0; p < epoch; p++)
     {
         right_answers_data = 0;
@@ -157,8 +148,8 @@ int main()
                 //Добавление входных данных в  первый сллой сети
                 for (int i = 0; i < size_network[0]; i++)
                 {
-                    activations[0][i] = x_data[v][i];
-                    neurons_value[0][i] = x_data[v][i];
+                    activations[0][i] = train_data[v].x[i];
+                    neurons_value[0][i] = train_data[v].x[i];
                 }
 
                 //Прямое распространение
@@ -175,7 +166,6 @@ int main()
                         neurons_value[i][j] = sigmoid(z + biases[i][j]);
                     }
                 }
-
                 //Посчет предсказания
                 double max = neurons_value[L - 1][0];
                 int predict = 0;
@@ -189,21 +179,20 @@ int main()
 
                 }
 
-                if (predict == y_data[v])
+                if (predict == train_data[v].y)
                 {
                     right_answers_data++;
                 }
-
                 //Обрастное распространение ошибки
                 for (int i = 0; i < size_network[L - 1]; i++)
                 {
-                    if (i != y_data[v])
+                    if (i != train_data[v].y)
                     {
                         delta[L - 1][i] = neurons_value[L - 1][i] * derivative_sigmoid(activations[L - 1][i]);
                     }
                     else
                     {
-                        delta[L - 1][i] = (neurons_value[L - 1][i] - y_data[v]) * derivative_sigmoid(activations[L - 1][i]);
+                        delta[L - 1][i] = (neurons_value[L - 1][i] - train_data[v].y) * derivative_sigmoid(activations[L - 1][i]);
                     }
                 }
 
@@ -220,6 +209,7 @@ int main()
                     }
                 }
             }
+
             //Изменение всех весов и смещений
             double learning_rate = 0.35 * exp(-p / epoch);
             //learning_rate = 0.35;
@@ -242,13 +232,14 @@ int main()
                 }
             }
         }
+
         //Оценка прогресса в обучении
-        for (int v = 0; v < examples_test; v++)
+        for (int v = 0; v < test_data.size(); v++)
         {
             //Добавление входных данных в  первый сллой сети
             for (int i = 0; i < size_network[0]; i++)
             {
-                neurons_value[0][i] = x_test[v][i];
+                neurons_value[0][i] = test_data[v].x[i];
             }
 
             //Прямое распространение
@@ -279,7 +270,7 @@ int main()
 
             }
 
-            if (predict == y_test[v])
+            if (predict == test_data[v].y)
             {
                 right_answers_test++;
             }
@@ -287,9 +278,9 @@ int main()
         auto end = chrono::steady_clock::now();
         time = end - begin;
 
-        cout << "Epoch: " << p + 1 << "/" << epoch << " Accuracy data: " << right_answers_data / examples_data * 100;
-        cout << " Accuracy test: " << right_answers_test / examples_test * 100 << " Time: " << time.count() << endl;
-    }
+        cout << "Epoch: " << p + 1 << "/" << epoch << " Accuracy data: " << right_answers_data / train_data.size() * 100;
+        cout << " Accuracy test: " << right_answers_test / test_data.size() * 100 << " Time: " << time.count() << endl;
 
+    }
 
 }

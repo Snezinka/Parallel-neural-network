@@ -1,3 +1,5 @@
 ﻿  network(distributed memory).cpp
-A:\University\Diploma\Pre-graduate practice\Parallel-neural-network\network(distributed memory)\network(distributed memory).cpp(131,9): warning C4101: rank_thread: неиспользованная локальная переменная
-  network(distributed memory).vcxproj -> A:\University\Diploma\Pre-graduate practice\Parallel-neural-network\network(distributed memory)\Debug\network(distributed memory).exe
+A:\University\Diploma\Pre-graduate practice\Parallel-neural-network\network(distributed memory)\network(distributed memory).cpp(132,16): warning C4101: status: неиспользованная локальная переменная
+A:\University\Diploma\Pre-graduate practice\Parallel-neural-network\network(distributed memory)\network(distributed memory).cpp(128,9): warning C4101: rank_thread: неиспользованная локальная переменная
+A:\University\Diploma\Pre-graduate practice\Parallel-neural-network\network(distributed memory)\network(distributed memory).cpp(359,1): error C4700: использована неинициализированная локальная переменная "examples_test"
+A:\University\Diploma\Pre-graduate practice\Parallel-neural-network\network(distributed memory)\network(distributed memory).cpp(364,1): error C4700: использована неинициализированная локальная переменная "test_data"

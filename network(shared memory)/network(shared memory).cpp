@@ -5,7 +5,7 @@
 #include <random>
 using namespace std;
 
-// Для создания весов используется метод нормализованной инициализации
+// Для создания весов используется метод нормированной инициализации
 double create_number(int n, int m)
 {
     double low = -sqrt(6) / sqrt(n + m);
@@ -33,11 +33,9 @@ int main()
 {
 
     cout << "Loading data\n" << endl;
-    string path = "A:/University/Diploma/Pre-graduate practice/Parallel-neural-network/Data/lib_MNIST_edit.txt";
+    string path = "A:/University/Diploma/Pre-graduate practice/Data/lib_MNIST_edit.txt";
     ifstream fin;
     fin.open(path);
-    string tmp;
-    fin >> tmp;
     int examples_data;
 
     fin >> examples_data;
@@ -61,10 +59,9 @@ int main()
     fin.close();
     cout << "Data MNIST loaded \n";
 
-    path = "A:/University/Diploma/Pre-graduate practice/Parallel-neural-network/Data/lib_10k.txt";
+    path = "A:/University/Diploma/Pre-graduate practice/Data/lib_10k.txt";
     int examples_test;
     fin.open(path);
-    fin >> tmp;
     fin >> examples_test;
     // examples_test -= 9000;
     cout << "Examples: " << examples_test << endl;
@@ -84,7 +81,6 @@ int main()
         }
     }
     fin.close();
-    cout << "Test MNIST loaded \n";
 
 
     cout << "Test MNIST loaded \n" << endl;
@@ -141,7 +137,7 @@ int main()
     int size_mini_batch = 100;
     int count_batch = examples_data / size_mini_batch;
     int num_threads = 10;
-    double epoch = 5;
+    double epoch = 20;
     chrono::duration<double> time;
     double right_answers_data;
     double right_answers_test;
