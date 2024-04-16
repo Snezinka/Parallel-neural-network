@@ -20,7 +20,7 @@ vector <Data> load_data(string path, int count_x)
     ifstream file;
     file.open(path);
     file >> examples;
-
+    examples *= 0.1;
     vector <Data> data(examples);
 
     for (int i = 0; i < examples; ++i)
@@ -66,8 +66,6 @@ double derivative_sigmoid(double z)
 }
 
 
-
-
 int main()
 {
 
@@ -83,14 +81,15 @@ int main()
     test_data = load_data(path_test, count_x);
     cout << "Data loaded." << endl;
 
+    //Инициализация нейросети
     const int L = 4;
     int size_network[L]{ 784, 256, 30, 10 };
-    double** weights[L];
+
     double* biases[L];
     double* delta[L];
     double* neurons_value[L];
-    double* activations[L];
-
+    double* activations[L]; 
+        
     cout << "Initialisation Network" << endl;
     cout << "Number lauers: " << L << endl;
     cout << "Size network: ";
@@ -100,20 +99,17 @@ int main()
     }
     cout << endl;
 
-    for (int i = 0; i < L; i++)
+    for (int i = 1; i < L; i++)
     {
-        weights[i] = new double* [size_network[i]];
+        if (i == 1)
+        {
+            neurons_value[0] = new double[size_network[0]];
+        }
+
         biases[i] = new double[size_network[i]];
         delta[i] = new double[size_network[i]];
         neurons_value[i] = new double[size_network[i]];
         activations[i] = new double[size_network[i]];
-    }
-    for (int i = 1; i < L; i++)
-    {
-        for (int j = 0; j < size_network[i]; j++)
-        {
-            weights[i][j] = new double[size_network[i - 1]];
-        }
     }
 
     for (int i = 1; i < L; i++)
@@ -121,12 +117,53 @@ int main()
         for (int j = 0; j < size_network[i]; j++)
         {
             biases[i][j] = create_number(size_network[i - 1], size_network[i]);
-            for (int k = 0; k < size_network[i - 1]; k++)
+        }
+    }
+    bool t = false;
+    double** weights3[L];
+    double* weights2[L];
+    if (t)
+    {   
+        
+        for (int i = 1; i < L; i++)
+        {
+            weights3[i] = new double* [size_network[i]];
+        }
+        for (int i = 1; i < L; i++)
+        {
+            for (int j = 0; j < size_network[i]; j++)
             {
-                weights[i][j][k] = create_number(size_network[i - 1], size_network[i]);
+                weights3[i][j] = new double[size_network[i - 1]];
+            }
+        } 
+        for (int i = 1; i < L; i++)
+        {
+            for (int j = 0; j < size_network[i]; j++)
+            {
+                for (int k = 0; k < size_network[i - 1]; k++)
+                {
+                    weights3[i][j][k] = create_number(size_network[i - 1], size_network[i]);
+                }
             }
         }
     }
+    else
+    {
+        
+        for (int i = 1; i < L; i++)
+        {
+            weights2[i] = new double[size_network[i] * size_network[i - 1]];
+        }
+        for (int i = 1; i < L; i++)
+        {
+            for (int j = 0; j < size_network[i] * size_network[i - 1]; j++)
+            {
+                weights2[i][j] = create_number(size_network[i - 1], size_network[i]);
+            }
+        }    
+    }
+
+
 
     int size_mini_batch = 10;
     int count_batch = train_data.size() / size_mini_batch;
@@ -134,7 +171,7 @@ int main()
     double right_answers_data, right_answers_test;
     double begin, end;
     chrono::duration<double> time;
-
+    
     for (int p = 0; p < epoch; p++)
     {
         right_answers_data = 0;
@@ -148,7 +185,7 @@ int main()
                 //Добавление входных данных в  первый сллой сети
                 for (int i = 0; i < size_network[0]; i++)
                 {
-                    activations[0][i] = train_data[v].x[i];
+                    //activations[0][i] = train_data[v].x[i];
                     neurons_value[0][i] = train_data[v].x[i];
                 }
 
@@ -158,10 +195,24 @@ int main()
                     for (int j = 0; j < size_network[i]; j++)
                     {
                         double z = 0;
-                        for (int k = 0; k < size_network[i - 1]; k++)
+                        if (t)
                         {
-                            z += weights[i][j][k] * neurons_value[i - 1][k];
+                            for (int k = 0; k < size_network[i - 1]; k++)
+                            {
+                                 z += weights3[i][j][k] * neurons_value[i - 1][k];
+                                
+                            }
                         }
+                        else 
+                        {
+                            int step = j * size_network[i - 1];
+                            for (int k = step; k < step + size_network[i - 1]; k++)
+                            {
+                                z += weights2[i][k] * neurons_value[i - 1][k - step];
+                            }
+
+                        }
+
                         activations[i][j] = z + biases[i][j];
                         neurons_value[i][j] = sigmoid(z + biases[i][j]);
                     }
@@ -195,44 +246,72 @@ int main()
                         delta[L - 1][i] = (neurons_value[L - 1][i] - train_data[v].y) * derivative_sigmoid(activations[L - 1][i]);
                     }
                 }
-
+                
                 for (int i = L - 2; i > 0; i--)
                 {
                     for (int j = 0; j < size_network[i]; j++)
                     {
                         double sum = 0;
-                        for (int k = 0; k < size_network[i + 1]; k++)
+                        if (t)
                         {
-                            sum += delta[i + 1][k] * weights[i + 1][k][j];
+                            for (int k = 0; k < size_network[i + 1]; k++)
+                            {
+                                sum += delta[i + 1][k] * weights3[i + 1][k][j];
+                            }
                         }
+                        else
+                        {
+                            int step = size_network[i];
+                            for (int k = j; k < size_network[i] * size_network[i + 1] + 1; k += step)
+                            {
+                                int a = (k - j) / step;
+                                sum += weights2[i + 1][k] * delta[i + 1][a];
+                            }
+                        }
+                         
                         delta[i][j] = derivative_sigmoid(activations[i][j]) * sum;
                     }
-                }
-            }
 
+                }
+                
+
+            }
+            
             //Изменение всех весов и смещений
             double learning_rate = 0.35 * exp(-p / epoch);
-            //learning_rate = 0.35;
             for (int i = 1; i < L; i++)
             {
                 for (int j = 0; j < size_network[i]; j++)
                 {
-                    for (int k = 0; k < size_network[i - 1]; k++)
+                    biases[i][j] = biases[i][j] - learning_rate * delta[i][j];
+                    if (t)
                     {
-                        weights[i][j][k] = weights[i][j][k] - learning_rate * delta[i][j] * neurons_value[i - 1][k]; // size_mini_batch;
+                        for (int k = 0; k < size_network[i - 1]; k++)
+                        {
+                            weights3[i][j][k] = weights3[i][j][k] - learning_rate * delta[i][j] * neurons_value[i - 1][k]; // size_mini_batch;
+                        }
+                    }
+                    else
+                    {
+                        int step = j * size_network[i - 1];
+                        for (int k = step; k < step + size_network[i - 1]; k++)
+                        {
+                            weights2[i][k] = weights2[i][k] - learning_rate * delta[i][j] * neurons_value[i - 1][k - step];
+                        }
                     }
                 }
             }
-
+            /*
             for (int i = 1; i < L; i++)
             {
                 for (int j = 0; j < size_network[i]; j++)
                 {
                     biases[i][j] = biases[i][j] - learning_rate * delta[i][j]; // size_mini_batch;
                 }
-            }
+            }*/
+            
         }
-
+        
         //Оценка прогресса в обучении
         for (int v = 0; v < test_data.size(); v++)
         {
@@ -248,9 +327,21 @@ int main()
                 for (int j = 0; j < size_network[i]; j++)
                 {
                     double z = 0;
-                    for (int k = 0; k < size_network[i - 1]; k++)
+
+                    if (t)
                     {
-                        z += weights[i][j][k] * neurons_value[i - 1][k];
+                        for (int k = 0; k < size_network[i - 1]; k++)
+                        {
+                            z += weights3[i][j][k] * neurons_value[i - 1][k];
+                        }
+                    }
+                    else
+                    {
+                        int step = j * size_network[i - 1];
+                        for (int k = step; k < step + size_network[i - 1]; k++)
+                        {
+                            z += weights2[i][k] * neurons_value[i - 1][k - step];
+                        }
                     }
                     activations[i][j] = z + biases[i][j];
                     neurons_value[i][j] = sigmoid(z + biases[i][j]);
@@ -274,6 +365,7 @@ int main()
             {
                 right_answers_test++;
             }
+           
         }
         auto end = chrono::steady_clock::now();
         time = end - begin;
@@ -281,6 +373,7 @@ int main()
         cout << "Epoch: " << p + 1 << "/" << epoch << " Accuracy data: " << right_answers_data / train_data.size() * 100;
         cout << " Accuracy test: " << right_answers_test / test_data.size() * 100 << " Time: " << time.count() << endl;
 
-    }
-
+    }   
 }
+
+
