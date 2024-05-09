@@ -1,0 +1,4 @@
+﻿  network_3.cpp
+A:\University\Diploma\Pre-graduate practice\for_supercomputer\network_3\network_3.cpp(81,75): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+A:\University\Diploma\Pre-graduate practice\for_supercomputer\network_3\network_3.cpp(120,19): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  network_3.vcxproj -> A:\University\Diploma\Pre-graduate practice\for_supercomputer\network_3\Debug\network_3.exe

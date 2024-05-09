@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "A:\\University\\Diploma\\Pre-graduate practice\\for_supercomputer\\network_1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2A6C132A-8614-487B-A98C-9260680260E9}|network_1.vcxproj|A:\\University\\Diploma\\Pre-graduate practice\\for_supercomputer\\network_1\\network_1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2A6C132A-8614-487B-A98C-9260680260E9}|network_1.vcxproj|solutionrelative:network_1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "network_1.cpp",
+              "DocumentMoniker": "A:\\University\\Diploma\\Pre-graduate practice\\for_supercomputer\\network_1\\network_1.cpp",
+              "RelativeDocumentMoniker": "network_1.cpp",
+              "ToolTip": "A:\\University\\Diploma\\Pre-graduate practice\\for_supercomputer\\network_1\\network_1.cpp",
+              "RelativeToolTip": "network_1.cpp",
+              "ViewState": "AQIAAGMAAAAAAAAAAAAAAHYAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-28T12:37:15.97Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

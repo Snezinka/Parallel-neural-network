@@ -1,6 +1,0 @@
-﻿  Trial neural network.cpp
-A:\University\Diploma\Pre-graduate practice\Parallel-neural-network\Trial neural network\Trial neural network.cpp(23,17): warning C4244: *=: преобразование "double" в "int", возможна потеря данных
-A:\University\Diploma\Pre-graduate practice\Parallel-neural-network\Trial neural network\Trial neural network.cpp(316,27): warning C4018: <: несоответствие типов со знаком и без знака
-A:\University\Diploma\Pre-graduate practice\Parallel-neural-network\Trial neural network\Trial neural network.cpp(172,12): warning C4101: begin: неиспользованная локальная переменная
-A:\University\Diploma\Pre-graduate practice\Parallel-neural-network\Trial neural network\Trial neural network.cpp(172,19): warning C4101: end: неиспользованная локальная переменная
-  Trial neural network.vcxproj -> A:\University\Diploma\Pre-graduate practice\Parallel-neural-network\Trial neural network\Debug\Trial neural network.exe

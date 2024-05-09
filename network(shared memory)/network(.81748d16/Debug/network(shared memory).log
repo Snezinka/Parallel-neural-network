@@ -1,4 +1,0 @@
-﻿  network(shared memory).cpp
-A:\University\Diploma\Pre-graduate practice\Parallel-neural-network\network(shared memory)\network(shared memory).cpp(22,17): warning C4244: *=: преобразование "double" в "int", возможна потеря данных
-A:\University\Diploma\Pre-graduate practice\Parallel-neural-network\network(shared memory)\network(shared memory).cpp(252,27): warning C4018: <: несоответствие типов со знаком и без знака
-  network(shared memory).vcxproj -> A:\University\Diploma\Pre-graduate practice\Parallel-neural-network\network(shared memory)\Debug\network(shared memory).exe

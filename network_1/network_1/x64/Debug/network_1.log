@@ -1,0 +1,4 @@
+﻿  network_1.cpp
+A:\University\Diploma\Pre-graduate practice\for_supercomputer\network_1\network_1.cpp(23,17): warning C4244: *=: преобразование "double" в "int", возможна потеря данных
+A:\University\Diploma\Pre-graduate practice\for_supercomputer\network_1\network_1.cpp(131,21): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  network_1.vcxproj -> A:\University\Diploma\Pre-graduate practice\for_supercomputer\network_1\x64\Debug\network_1.exe
