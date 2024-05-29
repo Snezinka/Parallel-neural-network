@@ -1,0 +1,294 @@
+
+Size core: 2
+
+Mean time:
+Epoch: 0.398871 s. Back propagation error: 22.8055 s * 10^-6. SGD: 212.487 s * 10^-6.
+
+Mean time:
+Epoch: 0.749065 s. Back propagation error: 41.8532 s * 10^-6. SGD: 466.211 s * 10^-6.
+
+Mean time:
+Epoch: 1.28313 s. Back propagation error: 76.0423 s * 10^-6. SGD: 746.357 s * 10^-6.
+
+Mean time:
+Epoch: 1.92219 s. Back propagation error: 125.67 s * 10^-6. SGD: 1107.64 s * 10^-6.
+
+Mean time:
+Epoch: 2.66519 s. Back propagation error: 183.144 s * 10^-6. SGD: 1468.52 s * 10^-6.
+
+Mean time:
+Epoch: 3.67591 s. Back propagation error: 278.407 s * 10^-6. SGD: 1838.24 s * 10^-6.
+
+Mean time:
+Epoch: 4.89392 s. Back propagation error: 393.291 s * 10^-6. SGD: 2245.39 s * 10^-6.
+
+Mean time:
+Epoch: 7.59068 s. Back propagation error: 747.517 s * 10^-6. SGD: 2690.72 s * 10^-6.
+
+Mean time:
+Epoch: 7.10486 s. Back propagation error: 578.466 s * 10^-6. SGD: 3207.34 s * 10^-6.
+
+Mean time:
+Epoch: 8.83359 s. Back propagation error: 715.025 s * 10^-6. SGD: 3678.97 s * 10^-6.
+
+Mean time:
+Epoch: 11.1355 s. Back propagation error: 888.176 s * 10^-6. SGD: 4094.8 s * 10^-6.
+
+Size core: 3
+
+Mean time:
+Epoch: 0.367723 s. Back propagation error: 21.4211 s * 10^-6. SGD: 158.892 s * 10^-6.
+
+Mean time:
+Epoch: 0.742692 s. Back propagation error: 39.9751 s * 10^-6. SGD: 351.772 s * 10^-6.
+
+Mean time:
+Epoch: 1.1961 s. Back propagation error: 63.2353 s * 10^-6. SGD: 531.139 s * 10^-6.
+
+Mean time:
+Epoch: 1.71103 s. Back propagation error: 91.3543 s * 10^-6. SGD: 744.246 s * 10^-6.
+
+Mean time:
+Epoch: 2.33021 s. Back propagation error: 128.013 s * 10^-6. SGD: 977.431 s * 10^-6.
+
+Mean time:
+Epoch: 3.07098 s. Back propagation error: 183.006 s * 10^-6. SGD: 1220.67 s * 10^-6.
+
+Mean time:
+Epoch: 3.92076 s. Back propagation error: 245.421 s * 10^-6. SGD: 1537.58 s * 10^-6.
+
+Mean time:
+Epoch: 5.05026 s. Back propagation error: 338.95 s * 10^-6. SGD: 1839.41 s * 10^-6.
+
+Mean time:
+Epoch: 6.14011 s. Back propagation error: 431.798 s * 10^-6. SGD: 2190.91 s * 10^-6.
+
+Mean time:
+Epoch: 8.0341 s. Back propagation error: 520.795 s * 10^-6. SGD: 2501.79 s * 10^-6.
+
+Mean time:
+Epoch: 10.238 s. Back propagation error: 642.405 s * 10^-6. SGD: 2787.3 s * 10^-6.
+
+Size core: 4
+
+Mean time:
+Epoch: 0.381963 s. Back propagation error: 24.4152 s * 10^-6. SGD: 140.756 s * 10^-6.
+
+Mean time:
+Epoch: 0.761078 s. Back propagation error: 42.9512 s * 10^-6. SGD: 298.252 s * 10^-6.
+
+Mean time:
+Epoch: 1.15244 s. Back propagation error: 55.3205 s * 10^-6. SGD: 433.873 s * 10^-6.
+
+Mean time:
+Epoch: 1.63087 s. Back propagation error: 78.209 s * 10^-6. SGD: 613.077 s * 10^-6.
+
+Mean time:
+Epoch: 2.19368 s. Back propagation error: 107.583 s * 10^-6. SGD: 801.539 s * 10^-6.
+
+Mean time:
+Epoch: 2.92556 s. Back propagation error: 157.284 s * 10^-6. SGD: 1015.19 s * 10^-6.
+
+Mean time:
+Epoch: 3.69579 s. Back propagation error: 203.295 s * 10^-6. SGD: 1254.38 s * 10^-6.
+
+Mean time:
+Epoch: 4.61719 s. Back propagation error: 273.088 s * 10^-6. SGD: 1490.61 s * 10^-6.
+
+Mean time:
+Epoch: 5.60984 s. Back propagation error: 337.419 s * 10^-6. SGD: 1747.49 s * 10^-6.
+
+Mean time:
+Epoch: 7.03899 s. Back propagation error: 412.897 s * 10^-6. SGD: 2016.6 s * 10^-6.
+
+Mean time:
+Epoch: 9.31531 s. Back propagation error: 511.399 s * 10^-6. SGD: 2244.07 s * 10^-6.
+
+Size core: 5
+
+Mean time:
+Epoch: 0.391724 s. Back propagation error: 25.0599 s * 10^-6. SGD: 125.856 s * 10^-6.
+
+Mean time:
+Epoch: 0.765811 s. Back propagation error: 43.2023 s * 10^-6. SGD: 248.404 s * 10^-6.
+
+Mean time:
+Epoch: 1.12823 s. Back propagation error: 50.7927 s * 10^-6. SGD: 352.351 s * 10^-6.
+
+Mean time:
+Epoch: 1.61466 s. Back propagation error: 72.0647 s * 10^-6. SGD: 470.39 s * 10^-6.
+
+Mean time:
+Epoch: 2.1841 s. Back propagation error: 98.7005 s * 10^-6. SGD: 613.638 s * 10^-6.
+
+Mean time:
+Epoch: 2.83973 s. Back propagation error: 139.368 s * 10^-6. SGD: 797.843 s * 10^-6.
+
+Mean time:
+Epoch: 3.57527 s. Back propagation error: 180.322 s * 10^-6. SGD: 957.592 s * 10^-6.
+
+Mean time:
+Epoch: 4.4374 s. Back propagation error: 236.988 s * 10^-6. SGD: 1161.96 s * 10^-6.
+
+Mean time:
+Epoch: 5.36794 s. Back propagation error: 292.252 s * 10^-6. SGD: 1380.06 s * 10^-6.
+
+Mean time:
+Epoch: 6.93343 s. Back propagation error: 356.726 s * 10^-6. SGD: 1574.31 s * 10^-6.
+
+Mean time:
+Epoch: 9.17947 s. Back propagation error: 446.044 s * 10^-6. SGD: 1789.95 s * 10^-6.
+
+Size core: 6
+
+Mean time:
+Epoch: 0.426798 s. Back propagation error: 30.241 s * 10^-6. SGD: 113.784 s * 10^-6.
+
+Mean time:
+Epoch: 0.826963 s. Back propagation error: 52.6612 s * 10^-6. SGD: 215.401 s * 10^-6.
+
+Mean time:
+Epoch: 1.11104 s. Back propagation error: 48.5359 s * 10^-6. SGD: 296.117 s * 10^-6.
+
+Mean time:
+Epoch: 1.57597 s. Back propagation error: 67.1186 s * 10^-6. SGD: 399.617 s * 10^-6.
+
+Mean time:
+Epoch: 2.10819 s. Back propagation error: 89.8933 s * 10^-6. SGD: 559.391 s * 10^-6.
+
+Mean time:
+Epoch: 2.75015 s. Back propagation error: 124.691 s * 10^-6. SGD: 724.939 s * 10^-6.
+
+Mean time:
+Epoch: 3.47431 s. Back propagation error: 163.536 s * 10^-6. SGD: 873.578 s * 10^-6.
+
+Mean time:
+Epoch: 4.25598 s. Back propagation error: 206.988 s * 10^-6. SGD: 1047.87 s * 10^-6.
+
+Mean time:
+Epoch: 5.11229 s. Back propagation error: 252.919 s * 10^-6. SGD: 1221.82 s * 10^-6.
+
+Mean time:
+Epoch: 6.33085 s. Back propagation error: 310.175 s * 10^-6. SGD: 1409.85 s * 10^-6.
+
+Mean time:
+Epoch: 8.46004 s. Back propagation error: 386.082 s * 10^-6. SGD: 1592.48 s * 10^-6.
+
+Size core: 7
+
+Mean time:
+Epoch: 0.425989 s. Back propagation error: 30.2063 s * 10^-6. SGD: 112.896 s * 10^-6.
+
+Mean time:
+Epoch: 0.839699 s. Back propagation error: 55.5239 s * 10^-6. SGD: 205.172 s * 10^-6.
+
+Mean time:
+Epoch: 1.13054 s. Back propagation error: 52.3105 s * 10^-6. SGD: 287.759 s * 10^-6.
+
+Mean time:
+Epoch: 1.6237 s. Back propagation error: 75.698 s * 10^-6. SGD: 387.878 s * 10^-6.
+
+Mean time:
+Epoch: 2.25024 s. Back propagation error: 112.411 s * 10^-6. SGD: 493.648 s * 10^-6.
+
+Mean time:
+Epoch: 2.89662 s. Back propagation error: 149.247 s * 10^-6. SGD: 602.953 s * 10^-6.
+
+Mean time:
+Epoch: 3.62988 s. Back propagation error: 189.65 s * 10^-6. SGD: 743.07 s * 10^-6.
+
+Mean time:
+Epoch: 4.43737 s. Back propagation error: 237.414 s * 10^-6. SGD: 894.703 s * 10^-6.
+
+Mean time:
+Epoch: 5.38328 s. Back propagation error: 292.249 s * 10^-6. SGD: 1039.26 s * 10^-6.
+
+Mean time:
+Epoch: 6.8779 s. Back propagation error: 358.403 s * 10^-6. SGD: 1196.84 s * 10^-6.
+
+Mean time:
+Epoch: 9.36612 s. Back propagation error: 432.754 s * 10^-6. SGD: 1343.39 s * 10^-6.
+
+Size core: 8
+
+Mean time:
+Epoch: 0.431406 s. Back propagation error: 31.7354 s * 10^-6. SGD: 106.569 s * 10^-6.
+
+Mean time:
+Epoch: 0.901964 s. Back propagation error: 65.957 s * 10^-6. SGD: 181.166 s * 10^-6.
+
+Mean time:
+Epoch: 1.15678 s. Back propagation error: 56.8753 s * 10^-6. SGD: 246.519 s * 10^-6.
+
+Mean time:
+Epoch: 1.62893 s. Back propagation error: 77.2715 s * 10^-6. SGD: 341.539 s * 10^-6.
+
+Mean time:
+Epoch: 2.22392 s. Back propagation error: 110.68 s * 10^-6. SGD: 430.263 s * 10^-6.
+
+Mean time:
+Epoch: 2.92618 s. Back propagation error: 155.434 s * 10^-6. SGD: 534.247 s * 10^-6.
+
+Mean time:
+Epoch: 3.67626 s. Back propagation error: 196.119 s * 10^-6. SGD: 678.35 s * 10^-6.
+
+Mean time:
+Epoch: 4.47915 s. Back propagation error: 242.942 s * 10^-6. SGD: 808.63 s * 10^-6.
+
+Mean time:
+Epoch: 5.4147 s. Back propagation error: 300.799 s * 10^-6. SGD: 927.141 s * 10^-6.
+
+Mean time:
+Epoch: 6.79111 s. Back propagation error: 374.705 s * 10^-6. SGD: 1032.46 s * 10^-6.
+
+Mean time:
+Epoch: 9.32771 s. Back propagation error: 456.374 s * 10^-6. SGD: 1174.26 s * 10^-6.
+
+Size core: 9
+
+Mean time:
+Epoch: 0.425199 s. Back propagation error: 30.4295 s * 10^-6. SGD: 106.442 s * 10^-6.
+
+Mean time:
+Epoch: 0.968125 s. Back propagation error: 76.1235 s * 10^-6. SGD: 183.085 s * 10^-6.
+
+Mean time:
+Epoch: 1.16348 s. Back propagation error: 58.3688 s * 10^-6. SGD: 234.934 s * 10^-6.
+
+Mean time:
+Epoch: 1.66342 s. Back propagation error: 82.879 s * 10^-6. SGD: 342.164 s * 10^-6.
+
+Mean time:
+Epoch: 2.28636 s. Back propagation error: 120.97 s * 10^-6. SGD: 419.844 s * 10^-6.
+
+Mean time:
+Epoch: 3.00128 s. Back propagation error: 167.489 s * 10^-6. SGD: 516.798 s * 10^-6.
+
+Mean time:
+Epoch: 3.77436 s. Back propagation error: 213.056 s * 10^-6. SGD: 617.895 s * 10^-6.
+
+Mean time:
+Epoch: 4.61165 s. Back propagation error: 262.557 s * 10^-6. SGD: 728.451 s * 10^-6.
+
+Mean time:
+Epoch: 5.58659 s. Back propagation error: 324.993 s * 10^-6. SGD: 856.078 s * 10^-6.
+
+Mean time:
+Epoch: 7.02541 s. Back propagation error: 399.019 s * 10^-6. SGD: 979.57 s * 10^-6.
+
+Mean time:
+Epoch: 9.30024 s. Back propagation error: 480.721 s * 10^-6. SGD: 1134.68 s * 10^-6.
+
+Size core: 10
+
+Mean time:
+Epoch: 0.429245 s. Back propagation error: 30.591 s * 10^-6. SGD: 106.075 s * 10^-6.
+
+Mean time:
+Epoch: 1.01178 s. Back propagation error: 83.5797 s * 10^-6. SGD: 174.002 s * 10^-6.
+
+Mean time:
+Epoch: 1.16893 s. Back propagation error: 57.918 s * 10^-6. SGD: 218.793 s * 10^-6.
+
+Mean time:
+Epoch: 1.64682 s. Back propagation error: 77.6098 s * 10^-6. SGD: 322.626 s * 10^-6.
